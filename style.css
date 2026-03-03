@@ -1,0 +1,177 @@
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #27ae60;
+    --grey: #bdc3c7;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-green);
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    background-color: var(--primary-green);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 20px;
+}
+
+.score-text {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Grid Layout */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Goal Card */
+.goal-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Icon Styling */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px auto;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.icon-wrapper svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--grey); /* Default Grey */
+    transition: fill 0.3s ease;
+}
+
+.goal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.goal-desc {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+/* Toggle Switch Styling */
+.toggle-switch {
+    margin-top: 15px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-green);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* --- ACTIVE STATE CLASSES --- */
+/* When the card is active, we change the icon color and card border */
+.goal-card.active .icon-wrapper {
+    background-color: rgba(46, 204, 113, 0.15);
+}
+
+.goal-card.active .icon-wrapper svg {
+    fill: var(--primary-green); /* Change to Green */
+}
+
+.goal-card.active {
+    border-color: var(--primary-green);
+}
