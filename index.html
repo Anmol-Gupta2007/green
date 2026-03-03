@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Goals Tracker</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>🌱 Green Goals Tracker</h1>
+            <p>Track your daily eco-friendly habits</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="score-text" id="scoreText">0% Completed</div>
+        </header>
+
+        <div class="goals-grid">
+            
+            <!-- Goal 1: Recycle -->
+            <div class="goal-card" onclick="toggleGoal(this)">
+                <div class="icon-wrapper">
+                    <!-- SVG Icon: Recycle -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+                    </svg>
+                </div>
+                <div class="goal-title">Recycle</div>
+                <div class="goal-desc">Sort all waste today</div>
+                <label class="toggle-switch">
+                    <input type="checkbox" onchange="handleToggle(this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Goal 2: Save Water -->
+            <div class="goal-card" onclick="toggleGoal(this)">
+                <div class="icon-wrapper">
+                    <!-- SVG Icon: Water Drop -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,22C12,22 20,15.5 20,11.5C20,8.5 17.5,6 14.5,6C13.5,6 12.5,6.5 12,7C11.5,6.5 10.5,6 9.5,6C6.5,6 4,8.5 4,11.5C4,15.5 12,22 12,22Z" />
+                    </svg>
+                </div>
+                <div class="goal-title">Save Water</div>
+                <div class="goal-desc">Shorter showers</div>
+                <label class="toggle-switch">
+                    <input type="checkbox" onchange="handleToggle(this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Goal 3: Walk/Bike -->
+            <div class="goal-card" onclick="toggleGoal(this)">
+                <div class="icon-wrapper">
+                    <!-- SVG Icon: Footsteps/Bike -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.83 5 5.28 5.42 5.08 6.01L3 12V20C3 20.55 3.45 21 4 21H5C5.55 21 6 20.55 6 20V15H18V20C18 20.55 18.45 21 19 21H20C20.55 21 21 20.55 21 20V12L18.92 6.01Z" />
+                    </svg>
+                </div>
+                <div class="goal-title">Eco Transport</div>
+                <div class="goal-desc">Walk or bike to work</div>
+                <label class="toggle-switch">
+                    <input type="checkbox" onchange="handleToggle(this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Goal 4: Meatless -->
+            <div class="goal-card" onclick="toggleGoal(this)">
+                <div class="icon-wrapper">
+                    <!-- SVG Icon: Leaf -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                    </svg>
+                </div>
+                <div class="goal-title">Meatless</div>
+                <div class="goal-desc">Vegetarian meal</div>
+                <label class="toggle-switch">
+                    <input type="checkbox" onchange="handleToggle(this)">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
